@@ -1,0 +1,511 @@
+/* ==========================================================================
+   ENVELOPE.CSS - PANTALLA DE SOBRE 3D INTERACTIVO Y SELLO DE CERA VIOLETA/LILA
+   MIS XV AÑOS - CANDELA (ESTÉTICA ACUARELA LILA, LAVANDA Y PLATA/VIOLETA)
+   ========================================================================== */
+
+#envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(214, 194, 242, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(196, 173, 232, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 50% 42%, #fdfcff 0%, #ece2f8 100%);
+  color: var(--xv-text-dark);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 1.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#envelope-screen.closing-portal {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(1.025);
+  pointer-events: none;
+}
+
+/* Fondo Ambiental con Flores en Acuarela Lila */
+.envelope-ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.envelope-leaf-corner {
+  position: absolute;
+  width: 12.5rem;
+  height: auto;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.envelope-leaf-corner.top-right {
+  top: -0.35rem;
+  right: -0.35rem;
+  transform: scaleX(-1);
+}
+
+.envelope-leaf-corner.bottom-left {
+  bottom: -0.35rem;
+  left: -0.35rem;
+  transform: scaleY(-1);
+}
+
+/* Contenedor Principal de la Pantalla del Sobre */
+.envelope-shell {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.envelope-center-hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.envelope-crown-mini {
+  width: 4.2rem;
+  height: auto;
+  margin-bottom: 0.35rem;
+  filter: drop-shadow(0 2px 4px rgba(88, 64, 124, 0.18));
+}
+
+.envelope-pretitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--xv-purple-band);
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+  line-height: 1.1;
+}
+
+.envelope-main-names {
+  font-family: var(--font-script);
+  font-size: 3.4rem;
+  letter-spacing: 0.02em;
+  color: var(--xv-text-dark);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(152, 123, 209, 0.25);
+}
+
+.envelope-header-rule {
+  width: 3.5rem;
+  height: 1.5px;
+  background-color: rgba(108, 79, 158, 0.55);
+  margin: 0.55rem auto 0 auto;
+}
+
+/* ==========================================================================
+   ESCENARIO DEL SOBRE 3D INTERACTIVO Y CARTA EDITORIAL
+   ========================================================================== */
+.envelope-container {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  height: 235px;
+  margin: 2.2rem auto 1.65rem auto;
+  perspective: 1200px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.envelope-container.opened {
+  transform: translateY(22px);
+}
+
+/* Interior del Sobre */
+.envelope-back-lining {
+  position: absolute;
+  inset: 0;
+  background-color: #8267ab;
+  border-radius: 0.85rem;
+  box-shadow: 0 22px 48px -12px rgba(72, 50, 108, 0.42),
+              0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.envelope-back-inner-frame {
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.6rem;
+  background-color: #705599;
+}
+
+/* Carta Interior Deslizable */
+.letter-card {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 1.15rem;
+  height: 195px;
+  background-color: #fdfcff;
+  border-radius: 0.65rem;
+  padding: 1.25rem 1.15rem;
+  box-shadow: 0 8px 24px rgba(45, 30, 70, 0.14);
+  border: 1px solid #e3d8f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  overflow: hidden;
+  transform: translateY(8px) scale(0.98);
+  opacity: 0.94;
+  transition: transform 1.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s,
+              box-shadow 1.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s,
+              opacity 0.8s ease 0.25s;
+}
+
+.envelope-container.opened .letter-card {
+  transform: translateY(-102px) scale(1.02);
+  opacity: 1;
+  box-shadow: 0 18px 40px rgba(72, 50, 108, 0.28);
+}
+
+.letter-inner-border {
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px solid rgba(108, 79, 158, 0.4);
+  border-radius: 0.45rem;
+  pointer-events: none;
+}
+
+.letter-content-wrap {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.letter-badge-top {
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--xv-purple-band);
+  font-weight: 600;
+}
+
+.letter-couple-title {
+  font-family: var(--font-script);
+  font-size: 2.15rem;
+  color: var(--xv-text-dark);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.letter-gold-rule {
+  width: 2.25rem;
+  height: 1px;
+  background-color: rgba(108, 79, 158, 0.55);
+  margin: 0.25rem auto;
+}
+
+.letter-date-main {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--xv-purple-band);
+}
+
+.letter-event-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--xv-text-muted);
+}
+
+/* Bolsillo Frontal Inferior del Sobre */
+.envelope-pocket-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  background: linear-gradient(180deg, #ab92d1 0%, #8e73b8 100%);
+  border-bottom-left-radius: 0.85rem;
+  border-bottom-right-radius: 0.85rem;
+  z-index: 7;
+  border-top: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: 0 -2px 10px rgba(45, 30, 70, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.envelope-pocket-stitch {
+  position: absolute;
+  inset: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  border-left: 1px solid rgba(255, 255, 255, 0.42);
+  border-right: 1px solid rgba(255, 255, 255, 0.42);
+  border-bottom-left-radius: 0.55rem;
+  border-bottom-right-radius: 0.55rem;
+  pointer-events: none;
+}
+
+.envelope-pocket-text {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1.15rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.envelope-pocket-script {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(60, 40, 95, 0.4);
+  letter-spacing: 0.02em;
+}
+
+/* Solapa Triangular Superior (3D) */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 112px;
+  z-index: 9;
+  filter: drop-shadow(0 5px 8px rgba(65, 45, 95, 0.22));
+  transform-origin: top center;
+  transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+              z-index 0.1s linear 0.45s;
+  backface-visibility: visible;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.envelope-flap-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #bfa8e0 0%, #9b80c4 100%);
+  position: relative;
+}
+
+.envelope-flap-trim {
+  position: absolute;
+  left: 0.35rem;
+  right: 0.35rem;
+  top: 0;
+  height: 106px;
+  opacity: 0.7;
+  pointer-events: none;
+  clip-path: polygon(2% 0%, 98% 0%, 50% 96%);
+  border-bottom: 1px solid #f0e6ff;
+}
+
+.envelope-container.opened .envelope-flap {
+  transform: rotateX(176deg);
+  z-index: 4;
+}
+
+/* Sello de Cera 3D Violeta Real */
+.wax-seal {
+  position: absolute;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  z-index: 12;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.65s ease;
+  animation: softPulseSeal 3.2s infinite ease-in-out;
+}
+
+@keyframes softPulseSeal {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    filter: drop-shadow(0 4px 10px rgba(60, 38, 95, 0.35));
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    filter: drop-shadow(0 6px 14px rgba(108, 79, 158, 0.55));
+  }
+}
+
+.envelope-container.opened .wax-seal {
+  transform: translateX(-50%) scale(0.75) translateY(-24px);
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+.wax-seal-rim {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #4b3470 0%, #8f72c2 50%, #3d285e 100%);
+  padding: 3.5px;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.45),
+              inset 0 -2px 5px rgba(32, 18, 54, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wax-seal-disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, #7d5fb0 0%, #5b437f 75%, #432e63 100%);
+  border: 1px solid rgba(235, 222, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 5px rgba(28, 15, 48, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.wax-seal-glare {
+  position: absolute;
+  top: -0.6rem;
+  left: -0.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.wax-seal-inner-ring {
+  position: absolute;
+  inset: 5px;
+  border-radius: 9999px;
+  border: 1px solid rgba(240, 228, 255, 0.32);
+  pointer-events: none;
+}
+
+.wax-seal-initials {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(30, 15, 50, 0.65);
+  z-index: 10;
+}
+
+/* Botón Principal «Abrir Invitación» */
+.envelope-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.25rem;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.envelope-container.opened ~ .envelope-cta-wrap {
+  opacity: 0.45;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+.open-envelope-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 2.1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--xv-purple-band) 0%, var(--xv-purple-band-dark) 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(91, 67, 127, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.open-envelope-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(91, 67, 127, 0.45);
+}
+
+.open-envelope-btn:active {
+  transform: scale(0.97);
+}
+
+.open-envelope-subhint {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--xv-text-muted);
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+@media (min-width: 768px) {
+  .envelope-shell {
+    max-width: 560px;
+  }
+  .envelope-main-names {
+    font-size: 3.9rem;
+  }
+  .envelope-container {
+    max-width: 380px;
+    height: 260px;
+  }
+  .letter-card {
+    height: 215px;
+  }
+  .envelope-pocket-front {
+    height: 165px;
+  }
+  .envelope-flap {
+    height: 122px;
+  }
+  .wax-seal {
+    top: 84px;
+    width: 64px;
+    height: 64px;
+  }
+  .envelope-leaf-corner {
+    width: 16rem;
+  }
+}

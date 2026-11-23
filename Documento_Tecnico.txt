@@ -1,0 +1,32 @@
+# DOCUMENTO TÉCNICO – INVITACIÓN MIS 15 AÑOS CANDELA (MODELO 02 - ACUARELA LILA & VIOLETA)
+
+Web de invitación digital de **Mis 15 Años - Candela**, desarrollada con arquitectura modular propia (Sobre 3D Interactivo + Invitación Editorial Floral en Acuarela Lila, Lavanda y Violeta Profundo).
+
+### Diseño
+- Estilo: Acuarela floral romántica, lila pastel, lavanda y bloques de contraste en violeta profundo.
+- Paleta: Papel Acuarela Lavanda/Blanco (`#fbf9fe`, `#f3eefb`), Lila Monumental (`#987bd1`, `#bca3e8`), Violeta Profundo (`#5b437f`, `#463266`) y Tinta Violeta Oscura (`#2a2038`).
+- Tipografías: *Cormorant Garamond*, *Playfair Display*, *Great Vibes* y *Montserrat*.
+- Diseño completamente responsive para móviles, tablets y ordenadores.
+- Transiciones y revelados en scroll fluidos y sutiles (`IntersectionObserver`) junto con mariposas en acuarela animadas.
+
+### Funcionalidades
+- Pantalla inicial con Sobre 3D interactivo en tonos lavanda/violeta, flores en acuarela (`flor_acuarela_1.png`), carta interior deslizable y sello de cera animado (`XV`).
+- Cabecera con ramillete floral superior izquierdo (`flor_acuarela_1.png`), número `15` monumental en acuarela lila con el nombre manuscrito superpuesto, cartela nube en acuarela (`fondo_acuarela.png`) enmarcada por `flor_acuarela_2.png` y `flor_acuarela_3.png`, y retrato principal en marco de arco.
+- Reproductor de música MP3 local integrado ("DALE PLAY") con barra de progreso interactiva, tiempos y botón flotante sincronizado.
+- Franja destacada en violeta profundo para la Fecha (`iconos/calendario.gif`, mes, día de la semana, número central y año entre filetes horizontales, botón píldora blanco `VER UBICACIÓN` y adorno floral).
+- Presentación de Padres y Padrinos, cuenta regresiva en tiempo real (`DÍAS : HORAS : MINUTOS : SEGUNDOS`) y calendario mensual dinámico con enlace directo a Google Calendar.
+- Secciones de Ceremonia Religiosa (`iconos/iglesia.gif`) y Fiesta (`iconos/celebration.gif` - Salón *Quinta La Bonita*) con enlaces directos a Google Maps.
+- Fotografías intercaladas con bordes orgánicos estilo papel rasgado y arreglos florales en acuarela.
+- Itinerario de actividades en línea de tiempo vertical alternada con iconos animados en tono violeta (`iglesia.gif`, `brindis.gif`, `celebration.gif`, `dinner.gif`, `party.gif`).
+- Sección *Dress Code* (*Elegante Formal*) con marco geométrico poligonal doble, coronas florales superior e inferior (`flor_acuarela_2.png`), siluetas en violeta (`iconos/vestidos.png`) y sugerencia temática (*tonos lila y blanco*).
+- Sección musical interactiva *«¡Revive mi día! Tu tema favorito»* flanqueada por ramas de lavanda (`rama_acuarela.png`) y botón `ENVIAR CANCIÓN` con formulario rápido hacia WhatsApp.
+- Franja destacada en violeta profundo para *Regalos* (`iconos/regalo.gif`) con botón `ACCESO A REGALO` que despliega los datos de transferencia bancaria, copiado rápido de número de cuenta al portapapeles y código QR ampliable.
+- Confirmación de asistencia (RSVP) mediante botón directo a WhatsApp (`CONFIRMAR`) y formulario interactivo desplegable.
+- Galería de fotografías con visor Lightbox interactivo y cierre emotivo *«¡Te espero!»* sobre jardín floral inferior en acuarela.
+
+### Estructura del Proyecto
+- `css/`: `global.css`, `animations.css`, `envelope.css`, `invitation.css`, `responsive.css`.
+- `js/`: `config.js`, `render.js`, `envelope.js`, `music.js`, `countdown.js`, `gallery.js`, `rsvp.js`, `interactions.js`, `invitation.js`.
+- `img/`: fotografías de la quinceañera (`xv_portada.jpg`, `xv_foto_1.jpg`..`xv_foto_5.jpg`), recursos florales en acuarela (`flor_acuarela_1.png`..`3.png`, `fondo_acuarela.png`, `rama_acuarela.png`, `corona.png`), código QR y logotipo BizFlow.
+- `iconos/`: iconos animados y vectoriales en tonos violeta y blanco (`calendario.gif`, `iglesia.gif`, `brindis.gif`, `celebration.gif`, `dinner.gif`, `party.gif`, `regalo.gif`, `music.gif`, `vestidos.png`).
+- `music/`: pista de audio MP3 local (`cancion_boda.mp3`).

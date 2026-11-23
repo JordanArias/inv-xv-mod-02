@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#5b437f" />
+  <title>Mis 15 Años - Candela</title>
+
+  <!-- Google Fonts: Cormorant Garamond, Great Vibes, Montserrat, Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Hojas de Estilos Modulares -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/envelope.css" />
+  <link rel="stylesheet" href="css/invitation.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- Definición SVG Reutilizable de Mariposa en Acuarela Lila -->
+  <svg width="0" height="0" style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="bf-wing-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#d8c6f7" stop-opacity="0.92" />
+        <stop offset="50%" stop-color="#9d7fd9" stop-opacity="0.88" />
+        <stop offset="100%" stop-color="#5d4384" stop-opacity="0.95" />
+      </linearGradient>
+      <linearGradient id="bf-wing-soft" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#e5d8fb" stop-opacity="0.95" />
+        <stop offset="65%" stop-color="#b297e6" stop-opacity="0.85" />
+        <stop offset="100%" stop-color="#7356a6" stop-opacity="0.9" />
+      </linearGradient>
+      <g id="watercolor-butterfly">
+        <path d="M24 23 C15 7, 2 7, 4 19 C5 25, 14 27, 23 26 Z" fill="url(#bf-wing-grad)" />
+        <path d="M23 26 C13 28, 6 35, 11 41 C16 45, 22 37, 24 28 Z" fill="url(#bf-wing-soft)" />
+        <path d="M26 23 C35 7, 48 7, 46 19 C45 25, 36 27, 27 26 Z" fill="url(#bf-wing-soft)" />
+        <path d="M27 26 C37 28, 44 35, 39 41 C34 45, 28 37, 26 28 Z" fill="url(#bf-wing-grad)" />
+        <path d="M25 18 C24.4 23, 24.4 29, 25 34" stroke="#422c63" stroke-width="1.4" stroke-linecap="round" />
+        <path d="M24.5 18 C22 14, 19 12, 17 12 M25.5 18 C28 14, 31 12, 33 12" stroke="#5b437f" stroke-width="0.9"
+          fill="none" stroke-linecap="round" />
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ====================================================================
+       PANTALLA INICIAL: SOBRE 3D INTERACTIVO EN ACUARELA LILA Y SELLO XV
+       ==================================================================== -->
+  <div id="envelope-screen" data-purpose="interactive-envelope-screen" aria-label="Sobre de invitación interactivo">
+
+    <!-- Decoración Ambiental de Flores en Acuarela Lila -->
+    <div class="envelope-ambient-bg" aria-hidden="true">
+      <div class="envelope-leaf-corner top-right">
+        <img src="img/flor_acuarela_1.png" alt="" />
+      </div>
+      <div class="envelope-leaf-corner bottom-left">
+        <img src="img/flor_acuarela_1.png" alt="" />
+      </div>
+    </div>
+
+    <!-- Contenedor Principal del Sobre -->
+    <div class="envelope-shell">
+      <div class="envelope-center-hero">
+        <img src="img/corona.png" alt="Corona XV Años" class="envelope-crown-mini" />
+        <p class="envelope-pretitle">Mis 15 Años</p>
+        <h1 class="envelope-main-names">Candela</h1>
+        <div class="envelope-header-rule" aria-hidden="true"></div>
+
+        <!-- Sobre 3D Interactivo -->
+        <section id="envelope-stage" class="envelope-container" data-purpose="interactive-envelope"
+          aria-label="Sobre de XV Años interactivo. Haz clic para abrir">
+
+          <!-- Forro Interior del Sobre -->
+          <div class="envelope-back-lining">
+            <div class="envelope-back-inner-frame"></div>
+          </div>
+
+          <!-- Carta Interior Deslizable -->
+          <article id="sliding-letter" class="letter-card" data-purpose="inner-card-preview">
+            <div class="letter-inner-border"></div>
+            <div class="letter-content-wrap">
+              <span class="letter-badge-top">MIS 15 AÑOS</span>
+              <h2 class="letter-couple-title">Candela</h2>
+              <div class="letter-gold-rule"></div>
+              <p class="letter-date-main">6 · 06 · 2026</p>
+              <p class="letter-event-sub">¡Te espero!</p>
+            </div>
+          </article>
+
+          <!-- Bolsillo Frontal Inferior -->
+          <div class="envelope-pocket-front">
+            <div class="envelope-pocket-stitch"></div>
+            <div class="envelope-pocket-text">
+              <p class="envelope-pocket-script">Estás cordialmente invitado</p>
+            </div>
+          </div>
+
+          <!-- Solapa Triangular Superior -->
+          <div id="envelope-flap" class="envelope-flap">
+            <div class="envelope-flap-inner">
+              <div class="envelope-flap-trim"></div>
+            </div>
+          </div>
+
+          <!-- Sello de Cera 3D Violeta -->
+          <div id="wax-seal" class="wax-seal" data-purpose="interactive-wax-seal" title="Abrir Sobre">
+            <div class="wax-seal-rim">
+              <div class="wax-seal-disc">
+                <div class="wax-seal-glare"></div>
+                <div class="wax-seal-inner-ring"></div>
+                <span class="wax-seal-initials">XV</span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Botón de Acción Principal -->
+        <div class="envelope-cta-wrap">
+          <button id="open-envelope-btn" type="button" class="open-envelope-btn" data-purpose="open-envelope-trigger">
+            <span id="open-envelope-label">Abrir Invitación</span>
+          </button>
+          <p class="open-envelope-subhint">Toca el sello para abrir</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       CONTENEDOR PRINCIPAL DE LA INVITACIÓN (ESTILO ACUARELA LILA & VIOLETA)
+       ==================================================================== -->
+  <main class="main-invitation-container paper-texture" role="main">
+
+    <!-- ==========================================
+         1. PORTADA HERO: ESQUINA FLORAL, "15 + CANDELA",
+            CARTELA ACUARELA, FOTO EN ARCO Y REPRODUCTOR
+         ========================================== -->
+    <section class="xv-hero-section" data-purpose="hero-section">
+
+      <!-- Esquina Floral Superior Izquierda -->
+      <img src="img/flor_acuarela_1.png" alt="Flores en acuarela lila y violeta" class="xv-hero-corner-flower-tl" />
+
+      <!-- Mariposas en Acuarela -->
+      <svg class="xv-butterfly xv-butterfly--hero-tr" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+      <svg class="xv-butterfly xv-butterfly--hero-ml" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+
+      <!-- Monograma Monumental "15" + Nombre "Candela" -->
+      <div class="xv-monogram-15-block">
+        <span class="xv-big-15" aria-hidden="true">15</span>
+        <h1 class="xv-quince-name">Candela</h1>
+      </div>
+
+      <!-- Cartela Nube en Acuarela Lila (fondo_acuarela.png) con Flores en Esquinas -->
+      <div class="xv-watercolor-cloud-wrap">
+        <img src="img/fondo_acuarela.png" alt="" aria-hidden="true" class="xv-cloud-bg-img" />
+        <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true" class="xv-cloud-flower xv-cloud-flower--tr" />
+        <img src="img/flor_acuarela_3.png" alt="" aria-hidden="true" class="xv-cloud-flower xv-cloud-flower--bl" />
+
+        <p class="xv-cloud-quote-text">
+          Dejo atrás un mundo y entro a otro nuevo...
+          Aunque a veces dudo o temo, estoy llena de
+          esperanzas y de sueños. Tengo la sensación
+          de que estoy construyendo mi propio camino.
+          Siento alegría y quiero compartirla. 1 kg de familia,
+          1 litro de amigos y una pizca de música, es la
+          receta perfecta para mis 15 y por eso quiero
+          que estés conmigo en esta gran noche.
+        </p>
+      </div>
+
+      <!-- Fotografía Principal en Marco de Arco con Flores Laterales -->
+      <!-- <div class="xv-hero-photo-wrap">
+        <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true"
+          class="xv-floral-decor xv-side-flower xv-side-flower--left xv-flower-hero-left" />
+        <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true"
+          class="xv-floral-decor xv-side-flower xv-side-flower--right xv-flower-hero-right" />
+
+        <div class="xv-hero-arch-frame">
+          <div class="xv-hero-arch-inner">
+            <img src="img/xv_foto_4.jpg" alt="Candela en sus XV Años" class="hero-arch-img"
+              title="Toca para ampliar fotografía" />
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Reproductor Musical "DALE PLAY" -->
+      <div class="xv-audio-player-block" data-purpose="audio-player">
+        <span class="xv-dale-play-label">DALE PLAY</span>
+
+        <div class="player-progress-wrap">
+          <div id="player-progress-bar" class="player-progress-bar" title="Adelantar o retroceder canción">
+            <div id="player-progress-fill" class="player-progress-fill" style="width: 28%;">
+              <span class="player-progress-thumb"></span>
+            </div>
+          </div>
+          <div class="player-times-row">
+            <span id="player-current-time">0:00</span>
+            <span id="player-total-time">4:10</span>
+          </div>
+        </div>
+
+        <div class="player-controls-row">
+          <button id="player-shuffle-btn" type="button" class="player-ctrl-btn" aria-label="Aleatorio">
+            <i class="fa-solid fa-shuffle"></i>
+          </button>
+          <button id="player-prev-btn" type="button" class="player-ctrl-btn" aria-label="Reiniciar canción">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button id="player-play-btn" type="button" class="player-play-main-btn" aria-label="Reproducir o pausar">
+            <i id="player-play-icon" class="fa-solid fa-play" style="font-size: 0.85rem; margin-left: 2px;"></i>
+          </button>
+          <button id="player-next-btn" type="button" class="player-ctrl-btn" aria-label="Siguiente canción">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+          <button id="player-repeat-btn" type="button" class="player-ctrl-btn active" aria-label="Repetir canción">
+            <i class="fa-solid fa-repeat"></i>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         2. FRANJA VIOLETA DESTACADA 1: FECHA EDITORIAL
+            (ICONO CALENDARIO + JUNIO + VIERNES | 6 | 2026)
+         ========================================== -->
+    <section class="xv-purple-band xv-purple-band--date" data-purpose="featured-date-band">
+      <div class="xv-band-inner">
+        <div class="xv-band-icon-box" aria-hidden="true">
+          <img src="iconos/calendario.gif" alt="Calendario del evento" />
+        </div>
+
+        <h2 class="xv-band-month">JUNIO</h2>
+
+        <div class="xv-editorial-date-row">
+          <div class="xv-date-side-pill">VIERNES</div>
+          <div class="xv-date-center-number">6</div>
+          <div class="xv-date-side-pill">2026</div>
+        </div>
+
+        <a id="band-location-btn" href="https://maps.google.com/?q=Salon+de+Eventos+Quinta+La+Bonita" target="_blank"
+          rel="noopener noreferrer" class="xv-white-pill-btn">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>VER UBICACIÓN</span>
+        </a>
+      </div>
+
+      <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true"
+        class="xv-band-corner-flower xv-band-corner-flower--br" />
+    </section>
+
+    <!-- ==========================================
+         3. PADRES, PADRINOS, CUENTA REGRESIVA
+            Y CALENDARIO MENSUAL INTERACTIVO
+         ========================================== -->
+    <section class="xv-family-date-section" data-purpose="family-and-date-section">
+
+      <!-- Flores Decorativas Laterales -->
+      <img src="img/flor_acuarela_3.png" alt="" aria-hidden="true"
+        class="xv-floral-decor xv-side-flower xv-side-flower--left xv-flower-familia-left" />
+      <img src="img/flor_acuarela_3.png" alt="" aria-hidden="true"
+        class="xv-floral-decor xv-side-flower xv-side-flower--right xv-flower-familia-right" />
+
+      <!-- Padres y Padrinos -->
+      <div class="xv-family-block">
+        <p class="xv-section-subtitle-upper">
+          ACOMPÁÑAME EN ESTE DÍA TAN<br />ESPECIAL, JUNTO A<br />MIS PADRES:
+        </p>
+        <div class="xv-script-names-group">
+          <p>Roberto López &amp;</p>
+          <p>Carolina Paredes</p>
+        </div>
+
+        <p class="xv-section-subtitle-upper">MIS PADRINOS:</p>
+        <div class="xv-script-names-group" style="margin-bottom: 0.5rem;">
+          <p>Cristian Pérez &amp;</p>
+          <p>Melanie Gómez</p>
+        </div>
+      </div>
+
+      <!-- Cuenta Regresiva ("Falta:") -->
+      <div class="xv-countdown-block" data-purpose="countdown-timer">
+        <h3 class="xv-gold-script-heading">Falta:</h3>
+
+        <div class="xv-countdown-timer-row" aria-label="Cuenta regresiva para mis XV años">
+          <div class="xv-cd-unit">
+            <span id="days" class="xv-cd-number">15</span>
+            <span class="xv-cd-label">DÍAS</span>
+          </div>
+          <span class="xv-cd-colon">:</span>
+          <div class="xv-cd-unit">
+            <span id="hours" class="xv-cd-number">03</span>
+            <span class="xv-cd-label">HORAS</span>
+          </div>
+          <span class="xv-cd-colon">:</span>
+          <div class="xv-cd-unit">
+            <span id="minutes" class="xv-cd-number">50</span>
+            <span class="xv-cd-label">MINUTOS</span>
+          </div>
+          <span class="xv-cd-colon">:</span>
+          <div class="xv-cd-unit">
+            <span id="seconds" class="xv-cd-number">10</span>
+            <span class="xv-cd-label">SEGUNDOS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendario Mensual ("El Gran Día") -->
+      <div class="xv-calendar-block" data-purpose="event-calendar">
+        <h3 class="xv-gold-script-heading">El Gran Día</h3>
+        <p class="xv-calendar-month-script">Junio</p>
+
+        <table class="xv-calendar-table" aria-label="Calendario de Junio 2026">
+          <thead>
+            <tr>
+              <th>LUN</th>
+              <th>MAR</th>
+              <th>MIÉ</th>
+              <th>JUE</th>
+              <th>VIE</th>
+              <th>SÁB</th>
+              <th>DOM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td><span class="xv-calendar-highlight">6</span></td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td>30</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a id="google-calendar-btn" href="#" target="_blank" rel="noopener noreferrer" class="xv-add-calendar-link">
+          <i class="fa-regular fa-calendar-plus"></i>
+          <span>Agendar en Google Calendar</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         4. MISA DE AGRADECIMIENTO Y FIESTA / SALÓN
+         ========================================== -->
+    <section class="xv-locations-section" data-purpose="locations-section">
+
+      <!-- Mariposa en Acuarela -->
+      <svg class="xv-butterfly xv-butterfly--fiesta-tl" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+
+      <!-- Flores Decorativas -->
+      <img src="img/rama_acuarela.png" alt="" aria-hidden="true"
+        class="xv-floral-decor xv-side-flower xv-side-flower--left xv-flower-ubicaciones-left" />
+      <img src="img/rama_acuarela.png" alt="" aria-hidden="true"
+        class="xv-floral-decor xv-side-flower xv-side-flower--right xv-flower-ubicaciones-right" />
+
+      <!-- Misa de Agradecimiento -->
+      <article class="xv-event-card">
+        <div class="xv-emerald-icon-box" aria-hidden="true">
+          <img src="iconos/iglesia.gif" alt="Ceremonia Religiosa" />
+        </div>
+
+        <h3 class="xv-event-title-serif">CEREMONIA</h3>
+        <p class="xv-event-subtitle-serif">IGLESIA</p>
+        <p class="xv-event-venue-italic">Sagrado Corazón</p>
+        <p class="xv-event-address">Av. Principal · Centro</p>
+        <p class="xv-event-time-line">a partir de las <span class="xv-event-time-val">6:00 PM</span></p>
+
+        <a id="church-map-btn" href="https://maps.google.com/?q=Iglesia+Sagrado+Corazon" target="_blank"
+          rel="noopener noreferrer" class="xv-gold-pill-btn">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>VER UBICACIÓN</span>
+        </a>
+      </article>
+
+      <!-- Fiesta / Salón Quinta La Bonita (Idéntico a Imagen de Referencia) -->
+      <article class="xv-event-card">
+        <div class="xv-emerald-icon-box" aria-hidden="true">
+          <img src="iconos/celebration.gif" alt="Fiesta" />
+        </div>
+
+        <h3 class="xv-event-title-serif">FIESTA</h3>
+        <p class="xv-event-subtitle-serif">SALÓN</p>
+        <p class="xv-event-venue-italic">Quinta La Bonita</p>
+        <p class="xv-event-address">Urbanización San José</p>
+        <p class="xv-event-time-line">a partir de las <span class="xv-event-time-val">7:00 PM</span></p>
+
+        <a id="reception-map-btn" href="https://maps.google.com/?q=Salon+de+Eventos+Quinta+La+Bonita" target="_blank"
+          rel="noopener noreferrer" class="xv-gold-pill-btn">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>VER UBICACIÓN</span>
+        </a>
+      </article>
+
+    </section>
+
+    <!-- ==========================================
+         5. BANNER FOTOGRÁFICO 1 (BORDES RASGADOS Y FLORES)
+         ========================================== -->
+    <div class="xv-torn-photo-banner" data-purpose="photo-divider-1">
+      <img src="img/flor_acuarela_1.png" alt="" aria-hidden="true"
+        class="xv-banner-flower xv-banner-flower--top xv-banner-flower--left xv-flower-banner1-left" />
+      <img src="img/flor_acuarela_1.png" alt="" aria-hidden="true"
+        class="xv-banner-flower xv-banner-flower--bottom xv-banner-flower--right xv-flower-banner1-right" />
+
+      <div class="xv-torn-photo-inner">
+        <!-- Borde Rasgado Superior -->
+        <svg class="xv-torn-edge-top" viewBox="0 0 500 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="tfa1" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="4" seed="7" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="0.6" />
+            </filter>
+            <filter id="tfb1" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03 0.14" numOctaves="3" seed="10" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="G" yChannelSelector="R"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="2.2" />
+            </filter>
+          </defs>
+          <path d="M-20,-10 L520,-10 L520,22 L-20,22 Z" fill="#fbf9fe" opacity="0.55" filter="url(#tfb1)" />
+          <path d="M-20,-10 L520,-10 L520,15 L-20,15 Z" fill="#fbf9fe" filter="url(#tfa1)" />
+        </svg>
+
+        <img src="img/xv_portada.jpg" alt="Candela posando al atardecer en jardín" class="zoomable-photo"
+          title="Toca para ampliar fotografía" />
+
+        <!-- Borde Rasgado Inferior -->
+        <svg class="xv-torn-edge-bottom" viewBox="0 0 500 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="tfa2" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="4" seed="14" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="0.6" />
+            </filter>
+            <filter id="tfb2" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03 0.14" numOctaves="3" seed="17" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="G" yChannelSelector="R"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="2.2" />
+            </filter>
+          </defs>
+          <path d="M-20,18 L520,18 L520,50 L-20,50 Z" fill="#fbf9fe" opacity="0.55" filter="url(#tfb2)" />
+          <path d="M-20,25 L520,25 L520,50 L-20,50 Z" fill="#fbf9fe" filter="url(#tfa2)" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         6. ITINERARIO DE ACTIVIDADES
+         ========================================== -->
+    <section class="xv-itinerary-section" data-purpose="itinerary-section">
+
+      <h2 class="xv-itinerary-title">Itinerario<br />de actividades</h2>
+
+      <div class="xv-timeline-container">
+        <div class="xv-timeline-axis" aria-hidden="true"></div>
+
+        <!-- 1. 6:00 PM - MISA -->
+        <div class="xv-timeline-item">
+          <div class="xv-timeline-side-left">
+            <div class="xv-timeline-icon" aria-hidden="true">
+              <img src="iconos/iglesia.gif" alt="Misa" />
+            </div>
+          </div>
+          <div class="xv-timeline-dot"></div>
+          <div class="xv-timeline-side-right">
+            <span class="xv-timeline-time">6:00 PM</span>
+            <span class="xv-timeline-name">MISA</span>
+          </div>
+        </div>
+
+        <!-- 2. 7:00 PM - CÓCTEL -->
+        <div class="xv-timeline-item">
+          <div class="xv-timeline-side-left">
+            <span class="xv-timeline-time">7:00 PM</span>
+            <span class="xv-timeline-name">CÓCTEL</span>
+          </div>
+          <div class="xv-timeline-dot"></div>
+          <div class="xv-timeline-side-right">
+            <div class="xv-timeline-icon" aria-hidden="true">
+              <img src="iconos/brindis.gif" alt="Cóctel" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 8:00 PM - VALS PRINCIPAL -->
+        <div class="xv-timeline-item">
+          <div class="xv-timeline-side-left">
+            <div class="xv-timeline-icon" aria-hidden="true">
+              <img src="iconos/celebration.gif" alt="Vals Principal" />
+            </div>
+          </div>
+          <div class="xv-timeline-dot"></div>
+          <div class="xv-timeline-side-right">
+            <span class="xv-timeline-time">8:00 PM</span>
+            <span class="xv-timeline-name">VALS PRINCIPAL</span>
+          </div>
+        </div>
+
+        <!-- 4. 9:00 PM - CENA -->
+        <div class="xv-timeline-item">
+          <div class="xv-timeline-side-left">
+            <span class="xv-timeline-time">9:00 PM</span>
+            <span class="xv-timeline-name">CENA</span>
+          </div>
+          <div class="xv-timeline-dot"></div>
+          <div class="xv-timeline-side-right">
+            <div class="xv-timeline-icon" aria-hidden="true">
+              <img src="iconos/dinner.gif" alt="Cena" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 11:00 PM - FIESTA -->
+        <div class="xv-timeline-item">
+          <div class="xv-timeline-side-left">
+            <div class="xv-timeline-icon" aria-hidden="true">
+              <img src="iconos/party.gif" alt="Fiesta" />
+            </div>
+          </div>
+          <div class="xv-timeline-dot"></div>
+          <div class="xv-timeline-side-right">
+            <span class="xv-timeline-time">11:00 PM</span>
+            <span class="xv-timeline-name">FIESTA</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         7. DRESS CODE CON MARCO GEOMÉTRICO POLIGONAL
+            Y CORONAS FLORALES EN ACUARELA
+         ========================================== -->
+    <section class="xv-dresscode-section" data-purpose="dress-code">
+
+      <!-- Mariposas en Acuarela -->
+      <svg class="xv-butterfly xv-butterfly--dress-tr" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+      <svg class="xv-butterfly xv-butterfly--dress-bl" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+
+      <!-- Tarjeta con Marco Geométrico Octogonal Doble -->
+      <div class="xv-dresscode-geo-card">
+        <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true" class="xv-geo-flower xv-geo-flower--top" />
+
+        <svg class="xv-geo-frame-svg" viewBox="0 0 360 280" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="180,10 318,46 350,140 318,234 180,270 42,234 10,140 42,46" stroke="#8a7c87"
+            stroke-width="1.35" fill="rgba(255, 255, 255, 0.42)" />
+          <polygon points="110,18 270,22 342,96 330,198 250,262 90,258 18,184 30,82" stroke="#9a8c97"
+            stroke-width="1.15" fill="none" />
+        </svg>
+
+        <div class="xv-dresscode-geo-content">
+          <div class="xv-dress-silhouettes">
+            <img src="iconos/vestidos.png" alt="Traje formal y vestido de gala" />
+          </div>
+
+          <h2 class="xv-dress-heading-serif">DRESS CODE</h2>
+          <p class="xv-dress-subtitle">Elegante Formal</p>
+          <p class="xv-dress-note">
+            Puedes inspirarte en la temática de la noche: tonos lila y blanco.
+          </p>
+        </div>
+
+        <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true" class="xv-geo-flower xv-geo-flower--bottom" />
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         9. BANNER FOTOGRÁFICO 2 (CON BORDE RASGADO Y FLORES)
+         ========================================== -->
+    <div class="xv-torn-photo-banner" data-purpose="photo-divider-2">
+      <img src="img/flor_acuarela_3.png" alt="" aria-hidden="true"
+        class="xv-banner-flower xv-banner-flower--top xv-banner-flower--left xv-flower-banner2-left" />
+      <img src="img/flor_acuarela_3.png" alt="" aria-hidden="true"
+        class="xv-banner-flower xv-banner-flower--bottom xv-banner-flower--right xv-flower-banner2-right" />
+
+      <div class="xv-torn-photo-inner">
+        <!-- Borde Rasgado Superior -->
+        <svg class="xv-torn-edge-top" viewBox="0 0 500 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="tfa3" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="4" seed="21" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="0.6" />
+            </filter>
+            <filter id="tfb3" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03 0.14" numOctaves="3" seed="24" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="G" yChannelSelector="R"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="2.2" />
+            </filter>
+          </defs>
+          <path d="M-20,-10 L520,-10 L520,22 L-20,22 Z" fill="#fbf9fe" opacity="0.55" filter="url(#tfb3)" />
+          <path d="M-20,-10 L520,-10 L520,15 L-20,15 Z" fill="#fbf9fe" filter="url(#tfa3)" />
+        </svg>
+
+        <img src="img/xv_foto_5.jpg" alt="Candela girando su vestido de XV años" class="zoomable-photo"
+          title="Toca para ampliar fotografía" />
+
+        <!-- Borde Rasgado Inferior -->
+        <svg class="xv-torn-edge-bottom" viewBox="0 0 500 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="tfa4" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="4" seed="28" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="0.6" />
+            </filter>
+            <filter id="tfb4" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03 0.14" numOctaves="3" seed="31" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="G" yChannelSelector="R"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="2.2" />
+            </filter>
+          </defs>
+          <path d="M-20,18 L520,18 L520,50 L-20,50 Z" fill="#fbf9fe" opacity="0.55" filter="url(#tfb4)" />
+          <path d="M-20,25 L520,25 L520,50 L-20,50 Z" fill="#fbf9fe" filter="url(#tfa4)" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         10. FRANJA VIOLETA DESTACADA 2: REGALOS
+             (CON DESPLIEGUE DE CUENTA BANCARIA Y QR)
+         ========================================== -->
+    <section class="xv-purple-band xv-purple-band--gifts" data-purpose="gift-registry">
+      <img src="img/flor_acuarela_2.png" alt="" aria-hidden="true"
+        class="xv-band-corner-flower xv-band-corner-flower--tl" />
+
+      <div class="xv-band-inner">
+        <div class="xv-band-icon-box" aria-hidden="true">
+          <img src="iconos/regalo.gif" alt="Regalos" />
+        </div>
+
+        <h2 class="xv-gifts-band-title">REGALOS</h2>
+
+        <p class="xv-gifts-band-text">
+          El mejor regalo es tu compañía, pero si deseas tener un detalle conmigo,
+          te agradeceré mucho tu aporte a mi tarjeta de regalo.
+        </p>
+
+        <div class="qr-card-wrap" data-purpose="qr-code">
+          <div class="qr-frame-box">
+            <img src="img/qr.png" alt="Código QR para regalo" class="qr-code-image"
+              title="Toca para ampliar el código QR" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         11. CONFIRMACIÓN DE ASISTENCIA (RSVP),
+             GALERÍA DE RECUERDOS Y "¡TE ESPERO!"
+         ========================================== -->
+    <section class="xv-rsvp-section" data-purpose="rsvp-section" id="confirmar-asistencia">
+
+      <!-- Mariposas en Acuarela -->
+      <svg class="xv-butterfly xv-butterfly--rsvp-tl" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+      <svg class="xv-butterfly xv-butterfly--rsvp-mr" viewBox="0 0 50 50" aria-hidden="true">
+        <use href="#watercolor-butterfly"></use>
+      </svg>
+
+      <!-- Icono de Lista / Portapapeles con Checks en Violeta -->
+      <div class="xv-emerald-icon-box" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+          stroke-linejoin="round" style="width: 3.3rem; height: 3.3rem;">
+          <rect x="10" y="8" width="28" height="34" rx="3.5" />
+          <path d="M18 6h12v5a2 2 0 01-2 2h-8a2 2 0 01-2-2V6z" />
+          <path d="M16 21l2.5 2.5 5-5M28 20h5" />
+          <path d="M16 31l2.5 2.5 5-5M28 30h5" />
+        </svg>
+      </div>
+
+      <h2 class="xv-rsvp-title-serif">CONFIRMACIÓN<br />DE ASISTENCIA</h2>
+
+      <p class="xv-rsvp-lead">
+        Tu presencia es muy importante.<br />
+        Por favor, confirma tu asistencia<br />
+        antes del 30 de Mayo.
+      </p>
+
+      <!-- Botón Píldora Violeta Principal "CONFIRMAR" (WhatsApp) -->
+      <a id="whatsapp-rsvp-btn" href="#" target="_blank" rel="noopener noreferrer" class="xv-gold-pill-btn"
+        aria-label="Confirmar asistencia por WhatsApp">
+        <i class="fa-solid fa-check"></i>
+        <span>CONFIRMAR</span>
+      </a>
+
+      <!-- Opción para desplegar Formulario Personalizado en Línea -->
+      <button id="toggle-rsvp-form-btn" type="button" class="toggle-rsvp-form-btn">
+        <span>Personalizar mensaje y pases</span>
+        <svg id="form-chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <!-- Formulario en Línea Interactivo -->
+      <form id="rsvp-online-form" class="rsvp-online-form hidden">
+        <div class="rsvp-form-group">
+          <label class="rsvp-label" for="guest-name">Nombre Completo o Familia</label>
+          <input id="guest-name" type="text" class="rsvp-input" placeholder="Ej. Familia López Paredes" required />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;" class="rsvp-form-group">
+          <div>
+            <label class="rsvp-label" for="guest-passes">Pases</label>
+            <select id="guest-passes" class="rsvp-select">
+              <option value="1">1 Persona</option>
+              <option value="2" selected>2 Personas</option>
+              <option value="3">3 Personas</option>
+              <option value="4">4 Personas</option>
+            </select>
+          </div>
+          <div>
+            <label class="rsvp-label" for="guest-attending">¿Asistirás?</label>
+            <select id="guest-attending" class="rsvp-select">
+              <option value="si" selected>¡Sí, ahí estaré!</option>
+              <option value="no">Lo siento, no podré</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="rsvp-form-group">
+          <label class="rsvp-label" for="guest-message">Mensaje para Candela</label>
+          <textarea id="guest-message" class="rsvp-textarea" rows="2"
+            placeholder="Escribe tus mejores deseos..."></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-submit-btn">
+          ENVIAR CONFIRMACIÓN POR WHATSAPP
+        </button>
+      </form>
+
+      <!-- Galería de Momentos Horizontal (3 Cuadros con Central Destacado e Intercalado) -->
+      <div class="gallery-block" data-purpose="xv-gallery">
+        <h3 class="xv-gold-script-heading" style="font-size: 2.15rem;">Mis Momentos</h3>
+        <div
+          class="gallery-trio-stage"
+          data-gallery-images="img/xv_foto_1.jpg,img/xv_foto_2.jpg,img/xv_foto_3.jpg,img/xv_foto_4.jpg"
+        >
+          <div class="gallery-thumb-item gallery-thumb-item--left" data-slot="0" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/xv_foto_1.jpg" alt="Sesión fotográfica de Candela 1" />
+          </div>
+          <div class="gallery-thumb-item gallery-thumb-item--center" data-slot="1" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/xv_foto_2.jpg" alt="Sesión fotográfica de Candela 2" />
+          </div>
+          <div class="gallery-thumb-item gallery-thumb-item--right" data-slot="2" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/xv_foto_3.jpg" alt="Sesión fotográfica de Candela 3" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Cierre Emotivo "¡Te espero!" y Jardín Floral Inferior -->
+      <div class="xv-farewell-block">
+        <div class="xv-heart-divider" aria-hidden="true">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <p class="xv-farewell-quote">
+          Los momentos especiales se viven<br />
+          mejor en compañía de quienes más quiero.
+        </p>
+
+        <h3 class="xv-te-esperamos-script">¡Te espero!</h3>
+
+        <div class="xv-bottom-floral-garden" aria-hidden="true">
+          <img src="img/flor_acuarela_1.png" alt="" class="xv-garden-flower-full" />
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         12. CIERRE FOTOGRÁFICO CON BORDE RASGADO
+         ========================================== -->
+    <footer class="xv-final-photo-section" data-purpose="footer-image-section">
+      <div class="xv-final-photo-box">
+        <svg class="xv-torn-edge-top" viewBox="0 0 500 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="tfa5" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="4" seed="35" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="0.6" />
+            </filter>
+            <filter id="tfb5" x="-5%" y="-50%" width="110%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03 0.14" numOctaves="3" seed="38" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="G" yChannelSelector="R"
+                result="d" />
+              <feGaussianBlur in="d" stdDeviation="2.2" />
+            </filter>
+          </defs>
+          <path d="M-20,-10 L520,-10 L520,22 L-20,22 Z" fill="#fbf9fe" opacity="0.55" filter="url(#tfb5)" />
+          <path d="M-20,-10 L520,-10 L520,15 L-20,15 Z" fill="#fbf9fe" filter="url(#tfa5)" />
+        </svg>
+
+        <img src="img/xv_foto_3.jpg" alt="Candela en su sesión de XV años" />
+
+        <div class="xv-final-vignette">
+          <p class="xv-final-name">Candela</p>
+          <p class="xv-final-sub">Mis XV Años · 6 · 06 · 2026</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+         13. PIE DE PÁGINA BIZFLOW (CONTACTO)
+         ========================================== -->
+    <footer class="bizflow-footer"
+      style="width: 100%; background: #1c1429; border-top: 1px solid rgba(182, 157, 214, 0.28); padding: 1rem 1rem; box-sizing: border-box; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.45rem; position: relative; z-index: 10;"
+      aria-label="BizFlow">
+      <a href="https://wa.me/?text=Hola%20BizFlow%2C%20quisiera%20cotizar%20una%20invitaci%C3%B3n%20digital"
+        target="_blank" rel="noopener noreferrer" title="BizFlow" style="display: inline-block;">
+        <img src="img/Bizflow_logo.png" alt="BizFlow"
+          style="height: 24px; width: auto; max-width: 130px; object-fit: contain; display: block; opacity: 0.9;" />
+      </a>
+      <div
+        style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap; font-family: var(--font-sans); font-size: 0.8rem; color: rgba(255, 255, 255, 0.88);">
+        <span>¿Quieres una invitación como esta?</span>
+        <a href="https://wa.me/?text=Hola%20BizFlow%2C%20quisiera%20cotizar%20una%20invitaci%C3%B3n%20digital"
+          target="_blank" rel="noopener noreferrer"
+          style="font-weight: 600; font-size: 0.78rem; color: var(--xv-gold-light); text-decoration: none;">
+          <span>Contáctanos</span>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Botón Flotante de Música -->
+  <button id="floating-music-btn" class="floating-music-btn is-paused" type="button"
+    aria-label="Pausar o reproducir música" title="Reproducir música">
+    <img src="iconos/music.gif" alt="Música de XV Años" />
+  </button>
+
+  <!-- Audio Local -->
+  <audio id="wedding-music" preload="auto" loop>
+    <source src="music/cancion_boda.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Visor Lightbox para Galería, Portada y QR -->
+  <div id="gallery-lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes">
+    <button id="lightbox-close" type="button" aria-label="Cerrar visor">&times;</button>
+    <img id="lightbox-img" src="" alt="Fotografía ampliada" />
+  </div>
+
+  <!-- Notificación Toast Flotante -->
+  <div id="copy-toast" class="toast-notification" role="status" aria-live="polite">
+    <span>✨ ¡Confirmación lista!</span>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script src="js/config.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/invitation.js"></script>
+</body>
+
+</html>

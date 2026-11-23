@@ -1,0 +1,141 @@
+/* ==========================================================================
+   GLOBAL.CSS - PALETA ACUARELA LILA, LAVANDA, VIOLETA PROFUNDO Y BLANCO
+   MIS XV AÑOS - CANDELA (MODELO 02 - ESTILO ACUARELA)
+   ========================================================================== */
+
+:root {
+  /* Paleta Base Papel Acuarela Lavanda & Blanco */
+  --xv-paper: #fbf9fe;
+  --xv-paper-warm: #f3eefb;
+  --xv-cream-card: #ffffff;
+  --xv-outer-blush: #d9caec;
+  --xv-blush-soft: #ede3f8;
+  --xv-blush-deep: #b69dd6;
+
+  /* Violeta Profundo (Franjas destacadas, Botones Píldora, Iconos, Títulos) */
+  --xv-purple-band: #5b437f;
+  --xv-purple-band-dark: #463266;
+  --xv-emerald: #58407c;
+  --xv-emerald-dark: #3d2a5c;
+  --xv-emerald-light: #755b9e;
+  --xv-emerald-soft: rgba(88, 64, 124, 0.12);
+
+  /* Lila & Lavanda Editorial (Número 15, Caligrafía, Marcos, Reproductor) */
+  --xv-lilac-num: #987bd1;
+  --xv-lilac-num-light: #bca3e8;
+  --xv-gold: #6c4f9e;
+  --xv-gold-bright: #8567ba;
+  --xv-gold-light: #e2d5f7;
+  --xv-gold-dark: #4c3575;
+  --xv-gold-pill: #5b437f;
+  --xv-geo-line: #8a7c87;
+
+  /* Textos y Bordes */
+  --xv-text-dark: #2a2038;
+  --xv-text-muted: #5d5070;
+  --xv-border: #dfd5ec;
+  --xv-border-gold: rgba(108, 79, 158, 0.35);
+
+  /* Tipografías */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Reset Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--xv-outer-blush);
+  background-image: radial-gradient(circle at 50% 20%, #ebe1f7 0%, #cfbdec 100%);
+  color: var(--xv-text-dark);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--xv-purple-band);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Utilidades de Tipografía */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Textura de Papel Acuarela Lila / Lavanda Suave */
+.paper-texture {
+  background-color: var(--xv-paper);
+  background-image:
+    radial-gradient(circle at 15% 18%, rgba(212, 193, 240, 0.35) 0%, transparent 38%),
+    radial-gradient(circle at 85% 32%, rgba(203, 182, 236, 0.3) 0%, transparent 42%),
+    radial-gradient(circle at 20% 62%, rgba(216, 198, 242, 0.28) 0%, transparent 40%),
+    radial-gradient(circle at 82% 78%, rgba(205, 184, 238, 0.32) 0%, transparent 45%),
+    radial-gradient(rgba(182, 160, 214, 0.22) 0.75px, transparent 0.75px),
+    linear-gradient(180deg, #fcfaff 0%, #f5effc 50%, #fbf9fe 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 20px 20px, 100% 100%;
+}
+
+/* Utilidades generales */
+.hidden {
+  display: none !important;
+}
+
+.flex {
+  display: flex !important;
+}

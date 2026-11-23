@@ -1,0 +1,165 @@
+/* ==========================================================================
+   ANIMATIONS.CSS - TRANSICIONES, REVELADO EN SCROLL Y MICRO-INTERACCIONES
+   MIS XV AÑOS - CANDELA (MODELO 02 - ACUARELA LILA)
+   ========================================================================== */
+
+/* Pulso Suave para Elementos Interactivos */
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 3.2s infinite ease-in-out;
+}
+
+/* Flotación Sutil para Mariposas en Acuarela */
+@keyframes butterflyFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--bf-rot, 0deg)) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) rotate(calc(var(--bf-rot, 0deg) + 3deg)) scale(1.03);
+  }
+}
+
+/* Entrada Soñadora de la Invitación tras abrir el Sobre */
+.page-dreamy-entrance {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-dreamy-entrance.page-ready {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   SISTEMA DE REVELADO CINEMÁTICO EN SCROLL (INTERSECTION OBSERVER)
+   ========================================================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Revelado con Escala Suave (Marcos, Fotos, Cartela Acuarela, Calendario) */
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-scale.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Revelado Superior para Cabecera Hero */
+.top-floral-reveal {
+  opacity: 0;
+  transform: translateY(-18px);
+  transition: opacity 1.3s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.top-floral-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Retardos Escalonados */
+.delay-1 { transition-delay: 0.16s; }
+.delay-2 { transition-delay: 0.32s; }
+.delay-3 { transition-delay: 0.48s; }
+.delay-4 { transition-delay: 0.64s; }
+.delay-5 { transition-delay: 0.80s; }
+
+/* Micro-interacciones de Botones y Galería */
+.rsvp-submit-btn,
+.floating-music-btn,
+.xv-gold-pill-btn,
+.xv-white-pill-btn {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease;
+}
+
+.rsvp-submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.rsvp-submit-btn:active {
+  transform: scale(0.97);
+}
+
+.gallery-thumb-item {
+  overflow: hidden;
+}
+
+.gallery-thumb-img {
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-thumb-item:hover .gallery-thumb-img {
+  transform: scale(1.06);
+}
+
+/* Animación del Botón Flotante de Música */
+.floating-music-btn.is-playing img {
+  animation: musicDiscRotate 7s linear infinite;
+}
+
+@keyframes musicDiscRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Notificación Flotante Toast */
+.toast-notification {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: var(--xv-purple-band-dark);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.75rem 1.35rem;
+  border-radius: 9999px;
+  box-shadow: 0 12px 28px rgba(45, 30, 70, 0.35);
+  border: 1px solid rgba(226, 213, 247, 0.45);
+  z-index: 250;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

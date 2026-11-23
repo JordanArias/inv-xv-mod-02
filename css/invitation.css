@@ -1,0 +1,1741 @@
+/* ==========================================================================
+   INVITATION.CSS - DISEÑO ACUARELA LILA & VIOLETA EDITORIAL (MODELO 02)
+   MIS XV AÑOS - CANDELA
+   ========================================================================== */
+
+/* Contenedor Principal tipo Tarjeta / Pergamino Acuarela */
+.main-invitation-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--xv-paper);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--xv-text-dark);
+  --xv-flower-size: clamp(6.5rem, 3.5rem + 9vw, 16.5rem);
+  --xv-flower-bleed: 0.35rem;
+  --xv-section-space: clamp(3rem, 2rem + 4.5vw, 6.5rem);
+}
+
+/* ==========================================================================
+   MARIPOSAS EN ACUARELA LILA & ELEMENTOS FLORALES DECORATIVOS
+   ========================================================================== */
+.xv-butterfly {
+  position: absolute;
+  width: clamp(2.1rem, 1.6rem + 1.8vw, 3.1rem);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+  opacity: 0.86;
+  filter: drop-shadow(0 3px 6px rgba(91, 67, 127, 0.14));
+  animation: butterflyFloat 5.5s ease-in-out infinite;
+}
+
+.xv-butterfly--hero-tr {
+  top: 2.2rem;
+  right: 10%;
+  --bf-rot: -14deg;
+}
+
+.xv-butterfly--hero-ml {
+  top: 15.5rem;
+  left: 6%;
+  width: clamp(1.7rem, 1.3rem + 1.2vw, 2.3rem);
+  --bf-rot: 18deg;
+  animation-delay: 1.2s;
+}
+
+.xv-butterfly--fiesta-tl {
+  top: 1.8rem;
+  left: 12%;
+  --bf-rot: 15deg;
+  animation-delay: 0.7s;
+}
+
+.xv-butterfly--dress-tr {
+  top: 2.2rem;
+  right: 8%;
+  --bf-rot: -16deg;
+  animation-delay: 1.6s;
+}
+
+.xv-butterfly--dress-bl {
+  bottom: 4.5rem;
+  left: 8%;
+  width: clamp(1.65rem, 1.3rem + 1vw, 2.25rem);
+  --bf-rot: 20deg;
+  animation-delay: 2.3s;
+}
+
+.xv-butterfly--rsvp-tl {
+  top: 1.6rem;
+  left: 11%;
+  width: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem);
+  --bf-rot: 16deg;
+  animation-delay: 0.9s;
+}
+
+.xv-butterfly--rsvp-mr {
+  top: 11rem;
+  right: 8%;
+  --bf-rot: -18deg;
+  animation-delay: 1.9s;
+}
+
+/* Flores Decorativas Laterales en Secciones */
+.xv-floral-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  opacity: 0.92;
+}
+
+.xv-side-flower {
+  width: var(--xv-flower-size);
+  height: auto;
+}
+
+/* Flores en Banners Fotográficos */
+.xv-banner-flower {
+  position: absolute;
+  width: var(--xv-flower-size);
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Posiciones y Orientaciones Individuales de Flores Laterales:
+   - Superior izquierda (left): esquina en top-left, apuntando hacia la derecha.
+   - Inferior derecha (right): esquina en bottom-right, apuntando hacia la izquierda.
+   Nota según geometría natural de cada PNG:
+   - flor_acuarela_1.png (natural: top-left -> derecha): top-left = none | bottom-right = scale(-1, -1)
+   - flor_acuarela_2.png (natural: bottom-left -> derecha): top-left = scaleY(-1) | bottom-right = scaleX(-1)
+   - flor_acuarela_3.png (natural: top-right -> izquierda): top-left = scaleX(-1) | bottom-right = scaleY(-1)
+*/
+.xv-flower-hero-left {
+  top: 0.75rem;
+  left: calc(-1 * var(--xv-flower-bleed));
+  width: calc(var(--xv-flower-size) * 0.9);
+  transform: scaleY(-1);
+}
+
+.xv-flower-hero-right {
+  bottom: -2.5rem;
+  right: calc(-1 * var(--xv-flower-bleed));
+  width: calc(var(--xv-flower-size) * 0.9);
+  transform: scaleX(-1);
+}
+
+.xv-flower-familia-left {
+  top: 0.5rem;
+  left: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleX(-1);
+}
+
+.xv-flower-familia-right {
+  bottom: 0.5rem;
+  right: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleY(-1);
+}
+
+.xv-flower-ubicaciones-left {
+  top: 0.5rem;
+  left: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleY(-1);
+}
+
+.xv-flower-ubicaciones-right {
+  bottom: 0.5rem;
+  right: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleX(-1);
+}
+
+.xv-flower-banner1-left,
+.xv-flower-final-left {
+  top: -0.4rem;
+  left: calc(-1 * var(--xv-flower-bleed));
+  transform: none;
+}
+
+.xv-flower-banner1-right,
+.xv-flower-final-right {
+  bottom: -0.4rem;
+  right: calc(-1 * var(--xv-flower-bleed));
+  transform: scale(-1, -1);
+}
+
+.xv-flower-banner2-left {
+  top: -0.4rem;
+  left: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleX(-1);
+}
+
+.xv-flower-banner2-right {
+  bottom: -0.4rem;
+  right: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleY(-1);
+}
+
+.xv-family-date-section> :not(.xv-floral-decor):not(.xv-butterfly):not(.xv-branch-decor),
+.xv-locations-section> :not(.xv-floral-decor):not(.xv-butterfly):not(.xv-branch-decor),
+.xv-itinerary-section> :not(.xv-floral-decor):not(.xv-butterfly):not(.xv-branch-decor),
+.xv-dresscode-section> :not(.xv-floral-decor):not(.xv-butterfly):not(.xv-branch-decor),
+.xv-playlist-section> :not(.xv-floral-decor):not(.xv-butterfly):not(.xv-branch-decor),
+.xv-rsvp-section> :not(.xv-floral-decor):not(.xv-butterfly):not(.xv-branch-decor) {
+  position: relative;
+  z-index: 4;
+}
+
+/* ==========================================================================
+   1. PORTADA HERO: ESQUINA FLORAL, "15 + NOMBRE", CARTELA ACUARELA,
+      RETRATO EN ARCO Y REPRODUCTOR "DALE PLAY"
+   ========================================================================== */
+.xv-hero-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 2.75rem;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+/* Arreglo Floral de Esquina Superior Izquierda (flor_acuarela_1.png) */
+.xv-hero-corner-flower-tl {
+  position: absolute;
+  top: -0.4rem;
+  left: -0.4rem;
+  width: clamp(11.5rem, 8rem + 16vw, 22rem);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+/* Monograma Monumental "15" + Nombre Manuscrito Superpuesto */
+.xv-monogram-15-block {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding: 0 1rem;
+}
+
+.xv-big-15 {
+  grid-area: 1 / 1;
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: clamp(13rem, 10rem + 12vw, 22rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  padding: 0.16em 0.14em;
+  background: linear-gradient(180deg, #8b6bc9 0%, #a589db 52%, #7d5eba 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 16px rgba(125, 94, 186, 0.2));
+  user-select: none;
+}
+
+.xv-quince-name {
+  grid-area: 1 / 1;
+  position: relative;
+  transform: translateY(0.06em) rotate(-3deg);
+  font-family: var(--font-script);
+  font-size: clamp(4.4rem, 3.3rem + 4.4vw, 7.6rem);
+  color: #1f162c;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  text-shadow:
+    0 2px 10px rgba(255, 255, 255, 0.95),
+    0 0 18px rgba(255, 255, 255, 0.85);
+  z-index: 5;
+}
+
+/* Cartela Nube en Acuarela Lila (fondo_acuarela.png) + Flores en Esquinas */
+.xv-watercolor-cloud-wrap {
+  position: relative;
+  z-index: 4;
+  width: 92%;
+  max-width: 440px;
+  margin: 0.5rem auto 6rem auto;
+  padding: 2.35rem 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xv-cloud-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  filter: drop-shadow(0 8px 20px rgba(125, 94, 186, 0.12));
+}
+
+.xv-cloud-flower {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+}
+
+.xv-cloud-flower--tr {
+  top: -2.1rem;
+  right: -0.85rem;
+  width: clamp(5.8rem, 4.5rem + 5vw, 8.8rem);
+  transform: rotate(12deg);
+}
+
+.xv-cloud-flower--bl {
+  bottom: -3.5rem;
+  left: -0.65rem;
+  width: clamp(5.6rem, 4.4rem + 4.8vw, 8.4rem);
+  transform: rotate(-8deg);
+}
+
+.xv-cloud-quote-text {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-serif);
+  font-size: clamp(0.92rem, 0.85rem + 0.35vw, 1.08rem);
+  font-weight: 600;
+  line-height: 1.52;
+  color: var(--xv-text-dark);
+  text-align: center;
+  max-width: 340px;
+}
+
+/* Retrato Principal en Marco de Arco Lila/Violeta */
+.xv-hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.xv-hero-arch-frame {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 275px;
+  aspect-ratio: 3 / 3.85;
+  border-radius: 999px 999px 10px 10px;
+  border: 2.5px solid var(--xv-gold);
+  padding: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 16px 36px rgba(88, 64, 124, 0.18);
+  overflow: hidden;
+}
+
+.xv-hero-arch-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px 999px 6px 6px;
+  overflow: hidden;
+}
+
+.hero-arch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  cursor: pointer;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xv-hero-arch-frame:hover .hero-arch-img {
+  transform: scale(1.04);
+}
+
+/* Reproductor de Audio "DALE PLAY" */
+.xv-audio-player-block {
+  width: 100%;
+  max-width: 315px;
+  padding: 0.5rem 1.25rem 0.75rem 1.25rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.xv-dale-play-label {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--xv-purple-band);
+  margin-bottom: 0.65rem;
+}
+
+.player-progress-wrap {
+  width: 100%;
+  margin-bottom: 0.55rem;
+}
+
+.player-progress-bar {
+  width: 100%;
+  background-color: rgba(108, 79, 158, 0.24);
+  height: 4px;
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.player-progress-fill {
+  background-color: var(--xv-purple-band);
+  height: 100%;
+  width: 28%;
+  border-radius: 9999px;
+  position: relative;
+  transition: width 0.15s linear;
+}
+
+.player-progress-thumb {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: var(--xv-purple-band);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.player-times-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--xv-text-muted);
+  font-family: var(--font-sans);
+  margin-top: 0.3rem;
+}
+
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+  margin-top: 0.2rem;
+}
+
+.player-ctrl-btn {
+  color: var(--xv-gold);
+  font-size: 0.92rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-ctrl-btn:hover,
+.player-ctrl-btn.active {
+  color: var(--xv-purple-band-dark);
+}
+
+.player-play-main-btn {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--xv-gold-bright) 0%, var(--xv-purple-band) 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(91, 67, 127, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.player-play-main-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(91, 67, 127, 0.45);
+}
+
+/* ==========================================================================
+   2. FRANJAS DESTACADAS EN VIOLETA PROFUNDO (FECHA Y REGALOS)
+   ========================================================================== */
+.xv-purple-band {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #5e4684 0%, #553d7a 100%);
+  color: #ffffff;
+  padding: 2.65rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.18),
+    0 10px 28px rgba(65, 45, 98, 0.18);
+}
+
+.xv-band-inner {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xv-band-icon-box {
+  margin-bottom: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xv-band-icon-box img,
+.xv-band-icon-box svg {
+  width: 4.1rem;
+  height: 4.1rem;
+  object-fit: contain;
+}
+
+.xv-band-month {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+/* Fila Editorial de Fecha en Franja Violeta: VIERNES | 6 | 2025 */
+.xv-editorial-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 330px;
+  margin-bottom: 1.15rem;
+}
+
+.xv-date-side-pill {
+  flex: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+  padding: 0.35rem 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.xv-date-center-number {
+  font-family: var(--font-display);
+  font-size: 3.7rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 0.9;
+  padding: 0 0.25rem;
+}
+
+/* Botón Píldora Blanco (sobre Franjas Violetas) */
+.xv-white-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.54rem 1.45rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: var(--xv-purple-band-dark);
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(30, 18, 52, 0.25);
+}
+
+.xv-white-pill-btn:hover {
+  transform: translateY(-2px);
+  background-color: #f6f0ff;
+  box-shadow: 0 9px 22px rgba(30, 18, 52, 0.34);
+}
+
+.xv-white-pill-btn:active {
+  transform: scale(0.97);
+}
+
+/* Flores de Esquina en las Franjas Violetas */
+.xv-band-corner-flower {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  width: clamp(7.5rem, 5.5rem + 7vw, 12.5rem);
+  height: auto;
+}
+
+.xv-band-corner-flower--br {
+  bottom: -0.1rem;
+  right: -0.55rem;
+  transform: scaleX(-1);
+}
+
+.xv-band-corner-flower--tl {
+  top: 1rem;
+  left: -0.75rem;
+  transform: scaleY(-1);
+}
+
+/* ==========================================================================
+   3. PADRES, PADRINOS, CUENTA REGRESIVA Y CALENDARIO MENSUAL
+   ========================================================================== */
+.xv-family-date-section {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem 1.75rem 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.xv-family-block {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 310px;
+  padding: 1.25rem 0.75rem 1.75rem 0.75rem;
+}
+
+.xv-section-subtitle-upper {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--xv-purple-band);
+  line-height: 1.48;
+  margin-bottom: 0.45rem;
+}
+
+.xv-script-names-group {
+  font-family: var(--font-script);
+  font-size: 2.15rem;
+  color: var(--xv-text-dark);
+  line-height: 1.18;
+  margin-bottom: 1.75rem;
+}
+
+/* Cuenta Regresiva ("Falta:") */
+.xv-countdown-block {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  width: 100%;
+}
+
+.xv-gold-script-heading {
+  font-family: var(--font-script);
+  font-size: 2.35rem;
+  color: var(--xv-purple-band);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.xv-countdown-timer-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.xv-cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.3rem;
+}
+
+.xv-cd-number {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 600;
+  color: var(--xv-purple-band);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.xv-cd-colon {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--xv-lilac-num);
+  line-height: 1;
+  transform: translateY(-0.2rem);
+}
+
+.xv-cd-label {
+  font-family: var(--font-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+  margin-top: 0.35rem;
+}
+
+/* Calendario Mensual */
+.xv-calendar-block {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xv-calendar-month-script {
+  font-family: var(--font-script);
+  font-size: 1.95rem;
+  color: var(--xv-text-dark);
+  line-height: 1.1;
+  margin-top: -0.15rem;
+  margin-bottom: 0.65rem;
+}
+
+.xv-calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: var(--font-serif);
+}
+
+.xv-calendar-table th {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--xv-purple-band);
+  padding-bottom: 0.45rem;
+}
+
+.xv-calendar-table td {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--xv-text-dark);
+  padding: 0.32rem 0;
+  position: relative;
+}
+
+.xv-calendar-highlight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.95rem;
+  height: 1.95rem;
+  border-radius: 9999px;
+  border: 1.8px solid var(--xv-purple-band);
+  background-color: rgba(152, 123, 209, 0.22);
+  color: var(--xv-purple-band-dark);
+  font-weight: 700;
+}
+
+.xv-add-calendar-link {
+  margin-top: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--xv-purple-band);
+  border-bottom: 1px dashed var(--xv-lilac-num);
+  padding-bottom: 2px;
+}
+
+.xv-add-calendar-link:hover {
+  color: var(--xv-purple-band-dark);
+}
+
+/* ==========================================================================
+   4. UBICACIONES: CEREMONIA Y FIESTA (SALÓN QUINTA LA BONITA)
+   ========================================================================== */
+.xv-locations-section {
+  position: relative;
+  width: 100%;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.xv-event-card {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 300px;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xv-emerald-icon-box {
+  color: var(--xv-purple-band);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xv-emerald-icon-box svg,
+.xv-emerald-icon-box img {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+.xv-event-title-serif {
+  font-family: var(--font-serif);
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+  line-height: 1.2;
+}
+
+.xv-event-subtitle-serif {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+  margin-top: 0.15rem;
+}
+
+.xv-event-venue-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--xv-purple-band);
+  margin: 0.1rem 0 0.25rem 0;
+}
+
+.xv-event-address {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--xv-text-dark);
+  line-height: 1.38;
+}
+
+.xv-event-time-line {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--xv-text-dark);
+  margin-bottom: 0.85rem;
+}
+
+/* Botón Píldora Violeta ("VER UBICACIÓN", "ENVIAR CANCIÓN", "CONFIRMAR") */
+.xv-gold-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  padding: 0.54rem 1.45rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #684d91 0%, #523b75 100%);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(82, 59, 117, 0.3);
+}
+
+.xv-gold-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(82, 59, 117, 0.4);
+}
+
+.xv-gold-pill-btn:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================================================
+   5. BANNERS FOTOGRÁFICOS CON BORDES DE PAPEL RASGADO Y FLORES
+   ========================================================================== */
+.xv-torn-photo-banner {
+  position: relative;
+  width: 100%;
+  margin: 0.5rem 0;
+  line-height: 0;
+  overflow: visible;
+}
+
+.xv-torn-photo-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.5;
+  overflow: hidden;
+  background-color: #ebe3f5;
+}
+
+.xv-torn-photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  cursor: pointer;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xv-torn-photo-inner:hover img {
+  transform: scale(1.035);
+}
+
+.xv-torn-edge-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.xv-torn-edge-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   6. ITINERARIO DE ACTIVIDADES (LÍNEA DE TIEMPO VERTICAL EN VIOLETA)
+   ========================================================================== */
+.xv-itinerary-section {
+  position: relative;
+  width: 100%;
+  padding: 2.25rem 1.25rem 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.xv-itinerary-title {
+  font-family: var(--font-script);
+  font-size: 2.45rem;
+  color: var(--xv-purple-band);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 1.75rem;
+}
+
+.xv-timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  padding: 0.5rem 0;
+  z-index: 4;
+}
+
+.xv-timeline-axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.8px;
+  background-color: var(--xv-purple-band);
+}
+
+.xv-timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.xv-timeline-side-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 0.65rem;
+  text-align: right;
+}
+
+.xv-timeline-side-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 0.65rem;
+  text-align: left;
+}
+
+.xv-timeline-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background-color: var(--xv-purple-band);
+  margin: 0 auto;
+  z-index: 5;
+  box-shadow: 0 0 0 3px var(--xv-paper);
+}
+
+.xv-timeline-time {
+  font-family: var(--font-serif);
+  font-size: 1.42rem;
+  font-weight: 700;
+  color: var(--xv-text-dark);
+  letter-spacing: 0.04em;
+}
+
+.xv-timeline-name {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--xv-text-muted);
+}
+
+.xv-timeline-icon {
+  color: var(--xv-purple-band);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xv-timeline-icon svg,
+.xv-timeline-icon img {
+  width: 4.1rem;
+  height: 4.1rem;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   7. DRESS CODE CON MARCO GEOMÉTRICO POLIGONAL Y CORONAS FLORALES
+   ========================================================================== */
+.xv-dresscode-section {
+  position: relative;
+  width: 100%;
+  padding: 2.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.xv-dresscode-geo-card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  padding: 3.1rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.xv-geo-frame-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.xv-geo-flower {
+  position: absolute;
+  left: 50%;
+  width: clamp(8.5rem, 6.8rem + 5vw, 11.5rem);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+}
+
+.xv-geo-flower--top {
+  top: -1.65rem;
+  transform: translateX(-50%) scaleY(-1) rotate(-50deg);
+}
+
+.xv-geo-flower--bottom {
+  bottom: -1.65rem;
+  transform: translateX(-50%) scaleX(-1) rotate(-45deg);
+}
+
+.xv-dresscode-geo-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xv-dress-silhouettes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.45rem;
+}
+
+.xv-dress-silhouettes img {
+  width: 6.4rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.xv-dress-heading-serif {
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+}
+
+.xv-dress-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--xv-purple-band);
+  margin: 0.1rem 0 0.4rem 0;
+}
+
+.xv-dress-note {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--xv-text-dark);
+  line-height: 1.42;
+  max-width: 245px;
+}
+
+/* ==========================================================================
+   8. SECCIÓN MUSICAL: "¡REVIVE MI DÍA! TU TEMA FAVORITO" + RAMAS DE LAVANDA
+   ========================================================================== */
+.xv-playlist-section {
+  position: relative;
+  width: 100%;
+  padding: 2.25rem 1.75rem 2.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.xv-branch-decor {
+  position: absolute;
+  width: clamp(6.2rem, 4.5rem + 7vw, 11.5rem);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+.xv-branch-decor--left {
+  top: 0.5rem;
+  left: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleY(-1) rotate(-8deg);
+}
+
+.xv-branch-decor--right {
+  bottom: 0.5rem;
+  right: calc(-1 * var(--xv-flower-bleed));
+  transform: scaleX(-1) rotate(-8deg);
+}
+
+.xv-playlist-icon-box {
+  color: var(--xv-purple-band);
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xv-playlist-icon-box svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.xv-playlist-title {
+  font-family: var(--font-serif);
+  font-size: 1.24rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.xv-playlist-desc {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--xv-text-dark);
+  line-height: 1.42;
+  max-width: 280px;
+  margin-bottom: 0.95rem;
+}
+
+/* Mini Formulario Desplegable para Enviar Canción */
+.song-suggest-form {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 0.9rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--xv-border-gold);
+  border-radius: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 8px 22px rgba(88, 64, 124, 0.08);
+}
+
+/* ==========================================================================
+   9. REGALOS (FRANJA VIOLETA + PANEL DESPLEGABLE DE TRANSFERENCIA Y QR)
+   ========================================================================== */
+.xv-gifts-band-title {
+  font-family: var(--font-serif);
+  font-size: 1.32rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.45rem;
+}
+
+.xv-gifts-band-text {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.48;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 325px;
+  margin-bottom: 1.1rem;
+}
+
+.xv-gift-details-collapsible {
+  width: 100%;
+  max-width: 340px;
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.1rem;
+  background-color: #fbf9fe;
+  color: var(--xv-text-dark);
+  border-radius: 1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 14px 32px rgba(25, 14, 45, 0.32);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xv-bank-transfer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.xv-bank-lines {
+  font-family: var(--font-serif);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+  line-height: 1.55;
+  margin-top: 0.25rem;
+}
+
+.copy-bank-btn {
+  margin-top: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  background-color: rgba(91, 67, 127, 0.1);
+  border: 1px solid rgba(91, 67, 127, 0.35);
+  color: var(--xv-purple-band);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.copy-bank-btn:hover {
+  background-color: var(--xv-purple-band);
+  color: #ffffff;
+}
+
+.qr-card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.qr-frame-box {
+  padding: 0.7rem;
+  background-color: #ffffff;
+  border: 1.5px solid var(--xv-gold);
+  border-radius: 0.85rem;
+  box-shadow: 0 10px 24px rgba(25, 14, 45, 0.25);
+}
+
+.qr-code-image {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.qr-caption-text {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--xv-text-muted);
+  margin-top: 0.35rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   10. CONFIRMACIÓN DE ASISTENCIA (RSVP), GALERÍA Y JARDÍN FLORAL "¡TE ESPERO!"
+   ========================================================================== */
+.xv-rsvp-section {
+  position: relative;
+  width: 100%;
+  padding: 2.25rem 0.5rem 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.xv-rsvp-title-serif {
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--xv-text-dark);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.xv-rsvp-lead {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--xv-text-dark);
+  line-height: 1.45;
+  max-width: 285px;
+  margin: 0.1rem 0 1rem 0;
+}
+
+/* Botón Alternar Formulario en Línea */
+.toggle-rsvp-form-btn {
+  margin-top: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(108, 79, 158, 0.1);
+  border: 1px solid rgba(108, 79, 158, 0.38);
+  color: var(--xv-purple-band);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease;
+}
+
+.toggle-rsvp-form-btn:hover {
+  background-color: rgba(108, 79, 158, 0.2);
+}
+
+.toggle-rsvp-form-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+/* Formulario en Línea Desplegable */
+.rsvp-online-form {
+  width: calc(100% - 2rem);
+  max-width: 340px;
+  margin-top: 1rem;
+  padding: 1.15rem;
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--xv-border-gold);
+  border-radius: 0.85rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  box-shadow: 0 8px 22px rgba(88, 64, 124, 0.07);
+}
+
+.rsvp-form-group {
+  width: 100%;
+}
+
+.rsvp-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--xv-text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.rsvp-input,
+.rsvp-select,
+.rsvp-textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--xv-border);
+  background-color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--xv-text-dark);
+  outline: none;
+}
+
+.rsvp-input:focus,
+.rsvp-select:focus,
+.rsvp-textarea:focus {
+  border-color: var(--xv-purple-band);
+}
+
+.rsvp-submit-btn {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--xv-purple-band) 0%, var(--xv-purple-band-dark) 100%);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  box-shadow: 0 4px 12px rgba(91, 67, 127, 0.28);
+  margin-top: 0.2rem;
+}
+
+/* Galería Horizontal de 3 Fotos (Izquierda Normal, Centro Ligeramente Sobresalido, Derecha Normal) */
+.gallery-block {
+  width: 100%;
+  max-width: 100%;
+  padding: 1.75rem 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-trio-stage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr 1fr;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.gallery-thumb-item {
+  position: relative;
+  border-radius: 0.65rem;
+  overflow: hidden;
+  border: 1.5px solid var(--xv-gold);
+  aspect-ratio: 3 / 4;
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(88, 64, 124, 0.14);
+  cursor: pointer;
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease;
+}
+
+.gallery-thumb-item--left,
+.gallery-thumb-item--right {
+  z-index: 2;
+  opacity: 0.96;
+}
+
+.gallery-thumb-item--center {
+  z-index: 5;
+  border-width: 2px;
+  border-color: var(--xv-purple-band);
+  box-shadow:
+    0 12px 26px rgba(74, 51, 112, 0.25),
+    0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+
+.gallery-thumb-item--center.is-visible {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.gallery-thumb-item--left.is-visible:hover,
+.gallery-thumb-item--right.is-visible:hover {
+  transform: translateY(-2px) scale(1.02);
+  opacity: 1;
+}
+
+.gallery-thumb-item--center.is-visible:hover {
+  transform: translateY(-6px) scale(1.06);
+}
+
+.gallery-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-thumb-img.is-swapping {
+  opacity: 0;
+  transform: scale(0.93);
+}
+
+/* Bloque Final "¡Te espero!" con Corazón y Jardín Floral Inferior */
+.xv-farewell-block {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.xv-heart-divider {
+  color: var(--xv-purple-band);
+  font-size: 1.15rem;
+  margin-bottom: 0.45rem;
+}
+
+.xv-farewell-quote {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--xv-text-dark);
+  line-height: 1.42;
+  max-width: 310px;
+}
+
+.xv-te-esperamos-script {
+  font-family: var(--font-script);
+  font-size: clamp(2.85rem, 2.3rem + 2.5vw, 4rem);
+  color: #1f162c;
+  font-weight: 400;
+  margin: 0.65rem 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+/* Jardín Floral de Cierre en el Borde Inferior */
+.xv-bottom-floral-garden {
+  position: relative;
+  width: 100%;
+  margin: 0.75rem 0;
+  line-height: 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.xv-garden-flower-full {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleY(-1);
+}
+
+/* ==========================================================================
+   11. CIERRE FOTOGRÁFICO Y COMPONENTES FLOTANTES
+   ========================================================================== */
+.xv-final-photo-section {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.xv-final-photo-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+}
+
+.xv-final-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.xv-final-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(45, 28, 72, 0.78) 0%, rgba(0, 0, 0, 0.12) 48%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.xv-final-name {
+  font-family: var(--font-script);
+  font-size: 2.7rem;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.xv-final-sub {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--xv-gold-light);
+}
+
+/* Botón Flotante de Música */
+.floating-music-btn {
+  position: fixed;
+  bottom: 5.25rem;
+  right: 1.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background: rgba(251, 249, 254, 0.82);
+  border: 2px solid var(--xv-purple-band);
+  box-shadow: 0 8px 22px rgba(60, 40, 95, 0.3);
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+.floating-music-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Visor Lightbox */
+#gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(22, 15, 34, 0.92);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox-img {
+  max-width: 92vw;
+  max-height: 85vh;
+  border-radius: 0.75rem;
+  border: 2px solid var(--xv-lilac-num);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}

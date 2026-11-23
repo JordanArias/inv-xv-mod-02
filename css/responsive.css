@@ -1,0 +1,356 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - ADAPTACIÓN MULTI-DISPOSITIVO: MÓVIL, TABLET Y PC
+   MIS XV AÑOS - CANDELA (MODELO 02 - ESTILO ACUARELA LILA & VIOLETA)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DISPOSITIVOS MÓVILES PEQUEÑOS (< 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .xv-big-15 {
+    font-size: 11.5rem;
+  }
+
+  .xv-quince-name {
+    font-size: 4rem;
+  }
+
+  .xv-watercolor-cloud-wrap {
+    padding: 1.95rem 1.45rem;
+  }
+
+  .xv-hero-arch-frame {
+    max-width: 240px;
+  }
+
+  .xv-cd-number {
+    font-size: 2.25rem;
+  }
+
+  .xv-cd-unit {
+    min-width: 2.75rem;
+  }
+
+  .xv-dresscode-geo-card {
+    max-width: 305px;
+    padding: 2.65rem 1.5rem;
+  }
+
+  .xv-floral-decor {
+    opacity: 0.85;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLETS (min-width: 768px) - DISEÑO EXPANDIDO Y FLUIDO
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .main-invitation-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* 1. Portada Hero en Tablet */
+  .xv-hero-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .xv-monogram-15-block {
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .xv-watercolor-cloud-wrap {
+    max-width: 580px;
+    padding: 3.1rem 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .xv-cloud-quote-text {
+    max-width: 440px;
+    font-size: 1.05rem;
+    line-height: 1.62;
+  }
+
+  .xv-hero-photo-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 2rem auto;
+    padding: 1rem 3rem;
+  }
+
+  .xv-hero-arch-frame {
+    max-width: 340px;
+  }
+
+  .xv-audio-player-block {
+    max-width: 420px;
+    padding: 0.75rem 1.75rem 1.25rem 1.75rem;
+  }
+
+  /* 2. Franjas Violetas en Tablet */
+  .xv-purple-band {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .xv-band-inner {
+    max-width: 520px;
+  }
+
+  .xv-editorial-date-row {
+    max-width: 400px;
+  }
+
+  .xv-date-center-number {
+    font-size: 4.3rem;
+  }
+
+  .xv-gifts-band-text {
+    max-width: 460px;
+    font-size: 1.05rem;
+  }
+
+  /* 3. Padres, Padrinos, Cuenta Regresiva y Calendario en Tablet */
+  .xv-family-date-section {
+    padding: 3.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    justify-items: center;
+  }
+
+  .xv-family-block,
+  .xv-countdown-block,
+  .xv-calendar-block {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid var(--xv-border-gold);
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 12px 32px rgba(88, 64, 124, 0.07);
+    width: 100%;
+    max-width: 380px;
+    height: 100%;
+    justify-content: center;
+  }
+
+  /* 4. Misa y Fiesta en 2 Columnas (Tablet y PC) */
+  .xv-locations-section {
+    padding: 3.5rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+    justify-items: center;
+  }
+
+  .xv-event-card {
+    max-width: 440px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid var(--xv-border-gold);
+    border-radius: 1.25rem;
+    padding: 2.25rem 1.75rem;
+    box-shadow: 0 14px 34px rgba(88, 64, 124, 0.08);
+    justify-content: space-between;
+  }
+
+  /* 5. Banners Fotográficos Rasgados en Tablet */
+  .xv-torn-photo-banner {
+    margin: 1rem 0;
+  }
+
+  .xv-torn-photo-inner {
+    aspect-ratio: 16 / 9;
+    max-height: 560px;
+  }
+
+  .xv-torn-photo-inner img {
+    object-position: center 20%;
+  }
+
+  .xv-torn-edge-top,
+  .xv-torn-edge-bottom {
+    height: 46px;
+  }
+
+  /* 6. Itinerario en Tablet */
+  .xv-itinerary-section {
+    padding: 3.5rem 3rem;
+  }
+
+  .xv-itinerary-title {
+    font-size: 3rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .xv-timeline-container {
+    max-width: 540px;
+    gap: 2rem;
+  }
+
+  /* 7. Dress Code Marco Geométrico en Tablet */
+  .xv-dresscode-geo-card {
+    max-width: 430px;
+    padding: 3.75rem 3rem;
+  }
+
+  .xv-dress-note {
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  /* 8. Playlist "¡Revive mi día!" en Tablet */
+  .xv-playlist-desc {
+    max-width: 420px;
+    font-size: 1.02rem;
+  }
+
+  /* 9. Confirmación de Asistencia y Galería en Tablet */
+  .xv-rsvp-lead {
+    max-width: 440px;
+    font-size: 1.02rem;
+  }
+
+  .rsvp-online-form {
+    max-width: 460px;
+    padding: 1.65rem;
+  }
+
+  .gallery-block {
+    max-width: 100%;
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .gallery-trio-stage {
+    grid-template-columns: 1fr 1.08fr 1fr;
+    gap: 0.85rem;
+    margin-top: 1.35rem;
+    padding: 0.85rem 0;
+  }
+
+  .xv-farewell-block {
+    padding-bottom: 0;
+  }
+
+  /* 10. Cierre Fotográfico en Tablet */
+  .xv-final-photo-box {
+    aspect-ratio: 16 / 9;
+    max-height: 560px;
+  }
+
+  .xv-final-photo-box img {
+    object-position: center 28%;
+  }
+
+  .xv-final-name {
+    font-size: 3.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. ESCRITORIO Y PC (min-width: 1024px) - EXPERIENCIA PANORÁMICA EDITORIAL
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .xv-watercolor-cloud-wrap {
+    max-width: 660px;
+    padding: 3.6rem 4.2rem;
+  }
+
+  .xv-cloud-quote-text {
+    max-width: 500px;
+    font-size: 1.12rem;
+  }
+
+  .xv-hero-arch-frame {
+    max-width: 390px;
+    border-width: 3px;
+    padding: 6px;
+  }
+
+  .xv-audio-player-block {
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid var(--xv-border-gold);
+    border-radius: 1.25rem;
+    padding: 1.25rem 2.25rem;
+    box-shadow: 0 12px 32px rgba(88, 64, 124, 0.07);
+  }
+
+  .xv-family-date-section {
+    padding: 4.5rem max(7rem, calc((100% - 1156px) / 2));
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 2.5rem;
+  }
+
+  .xv-locations-section {
+    padding: 4.5rem max(9rem, calc((100% - 1092px) / 2));
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 3.25rem;
+  }
+
+  .xv-event-card {
+    max-width: 500px;
+    padding: 2.75rem 2.25rem;
+  }
+
+  .xv-torn-photo-inner {
+    aspect-ratio: 16 / 8.2;
+    max-height: 620px;
+  }
+
+  .xv-torn-edge-top,
+  .xv-torn-edge-bottom {
+    height: 54px;
+  }
+
+  .xv-dresscode-geo-card {
+    max-width: 480px;
+    padding: 4.25rem 3.5rem;
+  }
+
+  .gallery-block {
+    max-width: 1280px;
+    padding: 2.25rem 0 1.75rem 0;
+  }
+
+  .gallery-trio-stage {
+    grid-template-columns: 1fr 1.08fr 1fr;
+    gap: 1.25rem;
+    padding: 1rem 0;
+  }
+
+  .xv-final-photo-box {
+    aspect-ratio: 16 / 8.2;
+    max-height: 620px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ESPACIADO VERTICAL ENTRE SECCIONES (FLUIDO EN TODAS LAS PANTALLAS)
+   -------------------------------------------------------------------------- */
+.xv-family-date-section,
+.xv-locations-section,
+.xv-itinerary-section,
+.xv-dresscode-section,
+.xv-playlist-section {
+  padding-top: var(--xv-section-space);
+  padding-bottom: var(--xv-section-space);
+}
+
+.xv-rsvp-section {
+  padding-top: var(--xv-section-space);
+}
+
+.xv-torn-photo-banner {
+  margin: calc(var(--xv-section-space) * 0.35) 0;
+}
