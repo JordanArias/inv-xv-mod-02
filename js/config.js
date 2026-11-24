@@ -11,8 +11,8 @@ const XV_CONFIG = {
 
   // Fecha y hora de inicio / fin (con zona horaria)
   fecha: {
-    fechaHoraISO: "2026-06-06T19:00:00-04:00",
-    fechaFinISO: "2026-06-07T03:00:00-04:00"
+    fechaHoraISO: "2026-11-24T18:00:00-04:00",
+    fechaFinISO: "2026-11-25T03:00:00-04:00"
   },
 
   // Horas y ubicaciones mostradas en las tarjetas y el itinerario
